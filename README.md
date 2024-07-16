@@ -1,2 +1,1 @@
-# Simple-Flappy-Bird
-Just a simple Flappy Bird game for tutorial purpose
+Juste un simple flappy bird adapté en FLAPPY KONG OUGAH BOUGAH

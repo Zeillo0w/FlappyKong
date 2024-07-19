@@ -29,17 +29,15 @@ public class GameManager : MonoBehaviour
     public Transform pipeSpawnPoint;
     public Button quitButton;
 
-    public GameObject scorePannel;
+    public GameObject scorePanel;
 
-    public Text GameStopedScoreText;
-
-    public Text GameStopedHighScoreText;
+    public Text gameStoppedScoreText;
+    public Text gameStoppedHighScoreText;
 
     void Awake()
     {
         Instance = this;
         Application.targetFrameRate = 60;
-
 
         if (PlayerPrefs.HasKey("Lives"))
         {
@@ -47,26 +45,21 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-
-            lives = 3;
+            lives = 5;
             PlayerPrefs.SetFloat("Lives", lives);
         }
-
 
         if (quitButton != null)
         {
             quitButton.gameObject.SetActive(false);
-
             quitButton.onClick.AddListener(QuitGame);
-
-            scorePannel.SetActive(false);
+            scorePanel.SetActive(false);
         }
     }
 
     void Start()
     {
         CurrentGameState = GameState.MainMenu;
-
         GeneratePipes();
     }
 
@@ -101,24 +94,40 @@ public class GameManager : MonoBehaviour
         {
             GameStop();
         }
-        else
-        {
-        }
     }
 
     public void GameStop()
     {
         Time.timeScale = 0;
         CurrentGameState = GameState.GameStop;
+        
         if (quitButton != null)
         {
             quitButton.gameObject.SetActive(true);
-            scorePannel.SetActive(true);
-            GameStopedScoreText.text = ScoreManager.Instance.score.ToString();
-            GameStopedHighScoreText.text = ScoreManager.Instance.highScore.ToString();
+            scorePanel.SetActive(true);
+            gameStoppedScoreText.text = ScoreManager.Instance.score.ToString();
+            gameStoppedHighScoreText.text = ScoreManager.Instance.highScore.ToString();
 
-            
+            // Envoie du meilleur score à la base de données via JavaScript (index.html)
+            string jsCode = @"
+                var highScore = " + ScoreManager.Instance.highScore.ToString() + @";
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '../save_score.php', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            console.log('Score envoyé avec succès à la base de données.');
+                        } else {
+                            console.error('Erreur lors de l\'envoi du score à la base de données:', xhr.statusText);
+                        }
+                    }
+                };
+                xhr.send('highScore=' + highScore);
+            ";
 
+            // Exécute le code JavaScript depuis Unity WebGL
+            Application.ExternalEval(jsCode);
         }
     }
 
@@ -129,13 +138,13 @@ public class GameManager : MonoBehaviour
 
     public void QuitGame()
     {
-        lives = 3;
+        lives = 5;
         PlayerPrefs.SetFloat("Lives", lives);
         PlayerPrefs.Save();
 
         RestartGame();
 
+        // Appel à la fonction JavaScript banUserAndRedirect définie dans index.html
         Application.ExternalCall("banUserAndRedirect");
     }
-
 }

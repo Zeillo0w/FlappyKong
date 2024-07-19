@@ -553,7 +553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.000091552734}
+  m_AnchoredPosition: {x: 0, y: 399}
   m_SizeDelta: {x: 528.2109, y: 582.8081}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &416586105
@@ -593,7 +593,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -546}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &416586107
@@ -762,9 +762,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598564719}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 410834143}
@@ -772,7 +772,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -57, y: -44}
+  m_AnchoredPosition: {x: -57.00006, y: -43.999878}
   m_SizeDelta: {x: 145.8049, y: 58.3905}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &598564721
@@ -1004,7 +1004,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -136}
   m_SizeDelta: {x: 528.2109, y: 582.8081}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &623601574
@@ -1836,9 +1836,9 @@ MonoBehaviour:
   pipePrefab: {fileID: 573677391555288371, guid: b84b88c6bb6604b3186d532ca9958817, type: 3}
   pipeSpawnPoint: {fileID: 1756827467}
   quitButton: {fileID: 1041455042}
-  scorePannel: {fileID: 410834140}
-  GameStopedScoreText: {fileID: 2050060095}
-  GameStopedHighScoreText: {fileID: 598564722}
+  scorePanel: {fileID: 410834140}
+  gameStoppedScoreText: {fileID: 2050060095}
+  gameStoppedHighScoreText: {fileID: 598564722}
 --- !u!1 &969342220
 GameObject:
   m_ObjectHideFlags: 0
@@ -2283,7 +2283,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tu disposes de 3 chances !
+  m_Text: Tu disposes de 5 chances !
 --- !u!222 &977206720
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2363,7 +2363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -229}
+  m_AnchoredPosition: {x: 0, y: -167}
   m_SizeDelta: {x: 299.8372, y: 153.40234}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1041455042
@@ -2485,7 +2485,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -226}
+  m_AnchoredPosition: {x: 0, y: -490}
   m_SizeDelta: {x: 299.8372, y: 153.40234}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1053611538
@@ -3215,7 +3215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 212, y: -411}
+  m_AnchoredPosition: {x: 212, y: -372}
   m_SizeDelta: {x: 909.079, y: 206.03}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1466425178
